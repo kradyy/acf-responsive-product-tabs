@@ -1,0 +1,136 @@
+:root {
+    --tabs-text-color: #333333;
+    --tabs-text-active-color: #0A1E5A;
+    --tabs-text-hover: #0A1E5A;
+    --tabs-border-color: #E2E2E2;
+}
+
+.product-tabs {
+    margin-top: 96px;
+}
+
+.product-tabs .navigation {
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-tabs .navigation li {
+    border-bottom: 2px solid var(--tabs-border-color);
+    text-align: center;
+    background-color: none;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+    border-radius: 4px 4px 0 0;
+    margin: 0 -5px;
+    padding: 0 1em;
+    flex-grow: 1;
+}
+
+.product-tabs .tabs {
+    padding-top: 45px;
+}
+
+.product-tabs .tab-content {
+    transition: 0.4s;
+    display: none;
+}
+
+.product-tabs .navigation a {
+    padding: 15px 40px;
+
+    display: inline-block;
+    padding: 1em 0;
+    font-weight: 700;
+    color: var(--tabs-text-color);
+    text-decoration: none;
+}
+
+.product-tabs .navigation li.selected,
+.product-tabs .navigation li:hover {
+    border-color: var(--tabs-text-hover);
+}
+
+.product-tabs .navigation li.selected a,
+.product-tabs .navigation li:hover a {
+    color: var(--tabs-text-hover);
+}
+
+.product-tabs .accordion-tab {
+    display: none;
+}
+
+@media (max-width: 560px) {
+    .product.section {
+        padding-bottom: 0;
+    }
+
+    .product-tabs .tab-content {
+        display: none;
+    }
+
+    .product-tabs .tab-content .inner {
+        padding: 20px;
+    }
+
+    .product-tabs {
+        margin-top: 30px;
+    }
+
+    .product-tabs .tabs {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .product-tabs .tab-content {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .product-tabs .navigation {
+        display: none;
+    }
+
+    .product-tabs .accordion-tab:first-child {
+        border-top: 1px solid var(--tabs-border-color);
+    }
+
+    .product-tabs .accordion-tab {
+        display: block;
+        padding: 28px 30px;
+        text-align: left;
+        position: relative;
+        font-size: 22px;
+        margin: 0;
+        border-bottom: 1px solid var(--tabs-border-color);
+    }
+
+    .product-tabs .accordion-tab:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 3px);
+        right: 30px;
+        display: inline-block;
+        width: 12px;
+        height: 8px;
+        background-image: url(../images/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all 200ms ease;
+    }
+
+    .product-tabs .accordion-tab a {
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    .product-tabs .accordion-tab.active a {
+        color: var(--tabs-text-active-color);
+    }
+
+    .product-tabs .accordion-tab.active:after {
+        transform: rotate(180deg);
+    }
+}
