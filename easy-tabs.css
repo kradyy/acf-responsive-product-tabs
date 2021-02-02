@@ -1,12 +1,12 @@
 :root {
-    --tabs-text-color: #333333;
+    --tabs-text-color: #0A1E5A;
     --tabs-text-active-color: #0A1E5A;
     --tabs-text-hover: #0A1E5A;
     --tabs-border-color: #E2E2E2;
 }
 
 .product-tabs {
-    margin-top: 96px;
+    margin-top: 16px;
 }
 
 .product-tabs .navigation {
@@ -17,7 +17,7 @@
 }
 
 .product-tabs .navigation li {
-    border-bottom: 2px solid var(--tabs-border-color);
+    border-bottom: 3px solid transparent;
     text-align: center;
     background-color: none;
     display: inline-block;
@@ -31,7 +31,10 @@
 }
 
 .product-tabs .tabs {
-    padding-top: 45px;
+    padding: 80px 0;
+    border-top: 1px solid #CED2DE;
+    font-size: 16px;
+    color: #0A1E5A;
 }
 
 .product-tabs .tab-content {
@@ -40,11 +43,9 @@
 }
 
 .product-tabs .navigation a {
-    padding: 15px 40px;
-
+    padding: 20px 16px;
     display: inline-block;
-    padding: 1em 0;
-    font-weight: 700;
+    font-size: 16px;
     color: var(--tabs-text-color);
     text-decoration: none;
 }
@@ -52,11 +53,6 @@
 .product-tabs .navigation li.selected,
 .product-tabs .navigation li:hover {
     border-color: var(--tabs-text-hover);
-}
-
-.product-tabs .navigation li.selected a,
-.product-tabs .navigation li:hover a {
-    color: var(--tabs-text-hover);
 }
 
 .product-tabs .accordion-tab {
@@ -76,13 +72,18 @@
         padding: 20px;
     }
 
-    .product-tabs {
-        margin-top: 30px;
-    }
-
     .product-tabs .tabs {
         text-align: left;
-        padding-top: 0;
+        padding: 0;
+        border: 0 !important;
+    }
+
+    .product-tabs .tabs>.container {
+        padding: 0;
+    }
+
+    .product-tabs {
+        margin-top: 30px;
     }
 
     .product-tabs .tab-content {
@@ -100,10 +101,11 @@
 
     .product-tabs .accordion-tab {
         display: block;
-        padding: 28px 30px;
+        padding: 20px 20px;
         text-align: left;
         position: relative;
-        font-size: 22px;
+        font-weight: 400;
+        font-size: 16px;
         margin: 0;
         border-bottom: 1px solid var(--tabs-border-color);
     }
