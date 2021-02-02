@@ -16,10 +16,6 @@ if (elementsExists(tabsContainer)) {
         let tabContent = document.querySelectorAll('.product-tabs .tab-content');
 
         if (productTabs && tabContent) {
-            // Show first tab by default (optional)
-            productTabs[0].classList.add('selected');
-            tabContent[0].style.display = 'block';
-
             for (tabs of productTabs) {
                 tabs.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -68,6 +64,10 @@ if (elementsExists(tabsContainer)) {
                     });
                 }
             }
+            // Show first tab by default (optional)
+            productTabs[0].click();
+            tabContent[0].style.display = 'block';
+            tabContent[0].style.maxHeight = '100%';
         }
     });
 }
