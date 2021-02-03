@@ -37,7 +37,7 @@ if (elementsExists(tabsContainer)) {
                 });
 
                 // Accordions
-                let accordions = document.querySelectorAll('.product-tabs .accordion-tab a');
+                let accordions = document.querySelectorAll('.product-tabs .accordion-tab > a');
 
                 for (accordion of accordions) {
                     accordion.addEventListener('click', (e) => {
