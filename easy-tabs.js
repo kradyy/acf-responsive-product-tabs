@@ -37,11 +37,13 @@ if (elementsExists(tabsContainer)) {
                 });
 
                 // Accordions
-                let accordions = document.querySelectorAll('.product-tabs .accordion-tab');
+                let accordions = document.querySelectorAll('.product-tabs .accordion-tab a');
 
                 for (accordion of accordions) {
                     accordion.addEventListener('click', (e) => {
-                        let currentTab = e.currentTarget.getAttribute('aria-controls');
+                        e.preventDefault();
+
+                        let currentTab = e.currentTarget.parentElement.getAttribute('aria-controls');
 
                         // Trigger click
                         document.querySelector('.product-tabs .navigation li[aria-controls="' + currentTab + '"] > a').click();
@@ -52,8 +54,8 @@ if (elementsExists(tabsContainer)) {
                         }
 
                         // Open current
-                        e.currentTarget.classList.toggle("active");
-                        let panel = e.currentTarget.nextElementSibling;
+                        e.currentTarget.parentElement.classList.toggle("active");
+                        let panel = e.currentTarget.parentElement.nextElementSibling;
 
                         if (panel.style.maxHeight) {
                             panel.style.maxHeight = null;
@@ -64,6 +66,7 @@ if (elementsExists(tabsContainer)) {
                     });
                 }
             }
+
             // Show first tab by default (optional)
             productTabs[0].click();
             tabContent[0].style.display = 'block';
